@@ -2954,17 +2954,14 @@ var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 const Heading = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "container",
-        children: [
-            console.log("test console"),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "hello react"
-            }, void 0, false, {
-                fileName: "app.js",
-                lineNumber: 7,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "hello Alex"
+        }, void 0, false, {
+            fileName: "app.js",
+            lineNumber: 6,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
         fileName: "app.js",
         lineNumber: 5,
         columnNumber: 5
@@ -2973,7 +2970,7 @@ _c = Heading;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Heading, {}, void 0, false, {
     fileName: "app.js",
-    lineNumber: 13,
+    lineNumber: 12,
     columnNumber: 13
 }, undefined));
 var _c;
