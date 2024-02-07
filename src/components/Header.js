@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -6,9 +7,9 @@ const Header = () => {
 
     return (
     <div className="flex justify-between w-full bg-blue-900 text-white px-7 py-4">
-        <h1 className="font-bold text-lg">Logo Here</h1>
+        <Link to='/' className="font-bold text-lg">Logo Here</Link>
         <div className="flex justify-evenly gap-x-5">
-            <a href="">About us</a>
+            <Link to='/aboutus' href="">About us</Link>
             <a href="">Contact us</a>
             <a href="">News Letter</a>
             <button onClick={() => {
