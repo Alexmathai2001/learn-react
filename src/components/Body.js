@@ -1,14 +1,16 @@
-import Cards from "./Cards"
+import {Cards,PromotedCards} from "./Cards"
 import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer"
 import useOnlineStatus from "../utils/hooks/useOnlineStatus"
 import { Link } from "react-router-dom"
+import { list } from "postcss"
 
 const Body = () => {
     const [List,setList] = useState([])
     const [searchKey,setsearchKey] = useState("")
     const [filteredList,setfilteredList] = useState([])
     const status = useOnlineStatus()
+    const RestaurantCardPromoted = PromotedCards(Cards)
 
     useEffect(() => {
         fetchData()
@@ -21,6 +23,8 @@ const Body = () => {
         setList(data?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
         setfilteredList(data?.data.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
+
+    console.log(List);
 
     //instead of loading screen
     if(List.length === 0){
@@ -59,7 +63,11 @@ const Body = () => {
         <div className="px-10 pt-10 flex flex-wrap bg-slate-100">
             {
                 filteredList.map((element) => (
-                    <Link key={element.id} to={'/restaurant/'+element.info.id}><Cards data={element}/></Link>
+                    <Link key={element.id} 
+                    to={'/restaurant/'+element.info.id}>
+
+                        {element.info.availability.opened ? (< RestaurantCardPromoted  data={element}/>) : (<Cards  data={element}/>)}
+                    </Link>
                 ))
             }
         </div>

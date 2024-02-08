@@ -1,6 +1,6 @@
 
 
-const Cards = (props) => {
+export const Cards = (props) => {
     const {data} = props
     return(
     <div className="w-72 h-60 my-4 mx-4  bg-white hover:shadow-lg rounded-sm p-3 flex flex-col justify-center">
@@ -25,5 +25,13 @@ const Cards = (props) => {
 }
 
 
-
-export default Cards
+export const PromotedCards = () => {
+    return (props) => {
+        return (
+            <div>
+                <label className="px-2 rounded-full absolute mt-4 ms-2 text-sm bg-green-500 text-white font-semibold">Open</label>
+                <Cards {...props}/>
+            </div>
+        )
+    }
+}
