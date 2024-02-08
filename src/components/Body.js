@@ -1,12 +1,14 @@
 import Cards from "./Cards"
 import { useState,useEffect } from "react"
 import Shimmer from "./Shimmer"
+import useOnlineStatus from "../utils/hooks/useOnlineStatus"
 import { Link } from "react-router-dom"
 
 const Body = () => {
     const [List,setList] = useState([])
     const [searchKey,setsearchKey] = useState("")
     const [filteredList,setfilteredList] = useState([])
+    const status = useOnlineStatus()
 
     useEffect(() => {
         fetchData()
@@ -23,6 +25,11 @@ const Body = () => {
     //instead of loading screen
     if(List.length === 0){
         return <Shimmer/>
+    }
+
+
+    if(status === false){
+        return <h1>Oops! Check your internet connection!!</h1>
     }
 
     return (

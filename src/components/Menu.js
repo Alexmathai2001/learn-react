@@ -1,5 +1,6 @@
 import useMenu from "../utils/hooks/useMenu";
 import { useParams } from "react-router-dom";
+import Shimmer from "./Shimmer";
 
 
 const Menu = () => {
@@ -7,7 +8,7 @@ const Menu = () => {
     const  {resID}  = useParams()
 
     const resInfo = useMenu(resID)
-
+    
     const { name, cuisines } = resInfo?.cards[0]?.card?.card?.info || {};
     const itemCards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards || [];
 
